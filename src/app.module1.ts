@@ -7,7 +7,9 @@ import { EmitController } from './emit/emit.controller';
 import { SubscribeSecondController } from './subscribe-second/subscribe-second.controller';
 import { EventEmitterModule } from '@nestjs/event-emitter/dist/event-emitter.module';
 import { NestListener } from './listeners/nest.subscriber';
-import { AppIdentifierChild, AppIdentifier } from './providers/appIdentifier';
+import { NestListener1 } from './listeners/nest.subscriber1';
+import { AppIdentifierChild1, AppIdentifier } from './providers/appIdentifier';
+
 @Module({
   imports: [
     EventEmitterModule.forRoot({
@@ -37,10 +39,11 @@ import { AppIdentifierChild, AppIdentifier } from './providers/appIdentifier';
     AppService,
     {
       provide: AppIdentifier, // The "Token" other classes will ask for
-      useClass: AppIdentifierChild,
+      useClass: AppIdentifierChild1,
     },
     EventBus,
     NestListener,
+    NestListener1,
   ],
 })
-export class AppModule {}
+export class AppModule1 {}

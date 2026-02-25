@@ -1,11 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { eventBusInstance, EventType } from './providers/EventBus';
+import { AppModule1 } from './app.module1';
 
 const myEmitter = eventBusInstance;
 
 myEmitter.once(EventType.STARTUP_ONLY, (args) => {
-  console.log('Main - Received STARTUP_ONLY event with args:', args);
+  console.log('STARTUP_ONLY event with args:', args);
 });
 
 myEmitter.subscribe(EventType.WEBHOOK, (args) => {
@@ -22,7 +23,11 @@ myEmitter.subscribe(EventType.PHASE_ONE, (args) => {
 
 async function bootstrap(port: number) {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? port);
+  await app.listen(port);
+}
+async function bootstrap1(port: number) {
+  const app = await NestFactory.create(AppModule1);
+  await app.listen(port);
 }
 bootstrap(3000);
-bootstrap(3001);
+bootstrap1(3001);
