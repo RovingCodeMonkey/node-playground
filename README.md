@@ -64,6 +64,12 @@ curl http://localhost:3000/emit/singleton/PHASE_ONE?message=message
 curl http://localhost:3000/emit/instance/PHASE_ONE?message=message
 #nest singleton
 curl http://localhost:3000/emit/nest/PHASE_ONE?message=message
+
+#for giggles you can even get the second server to listen to crossover events from the first
+curl http://localhost:3001/subscribe/cross/PHASE_ONE
+#not notice it's actually the app at port 3001 handling this event
+curl http://localhost:3000/emit/PHASE_ONE?message=message
+
 ```
 
 ## Stay in touch

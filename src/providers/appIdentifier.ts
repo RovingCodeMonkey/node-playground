@@ -14,7 +14,7 @@ export class AppIdentifier {
 
 @Injectable()
 export class AppIdentifierChild extends AppIdentifier {
-  static id: string = 'app';
+  static id: string = 'app3000';
   constructor() {
     super();
     this.setId(AppIdentifierChild.id);
@@ -25,7 +25,7 @@ export class AppIdentifierChild extends AppIdentifier {
 }
 @Injectable()
 export class AppIdentifierChild1 extends AppIdentifier {
-  static id: string = 'app1';
+  static id: string = 'app3001';
   constructor() {
     super();
     this.setId(AppIdentifierChild1.id);
