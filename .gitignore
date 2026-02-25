@@ -7,6 +7,15 @@
 /*.js
 /*.js.map
 
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
 # Environment variables and sensitive files
 .env
 .env.*
@@ -20,7 +29,24 @@ lerna-debug.log*
 /coverage
 
 # Editor configuration files (optional, depending on team preference)
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 .DS_Store
 *.swp
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
